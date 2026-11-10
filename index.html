@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8ff">
+  <meta name="description" content="Сөздер әлеміне саяхат — қазақ тілін үйренуге арналған жылы әрі қолжетімді ойын." />
+  <title>Сөздер әлеміне саяхат</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Негізгі бөлімге өту</a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Басты бет"><span class="brand-mark" aria-hidden="true">📘</span><span>Сөздер әлеміне саяхат</span></a>
+    <button id="display-toggle" class="display-toggle" type="button" aria-pressed="false">Түсті безендіру: өшірулі</button>
+    <div class="top-progress" aria-live="polite"><span>Менің жұлдыздарым</span><strong id="star-count">⭐ 0</strong></div>
+  </header>
+  <main id="main">
+    <section id="home" class="screen hero-screen">
+      <div class="hero-copy">
+        <p class="eyebrow">Қазақ тілі · 3–4 сынып</p>
+        <h1>Сәлем!<br><span>Қазақша ойнайық.</span></h1>
+        <p class="intro">Төрт деңгейдегі тапсырманы ретімен орында. Әр деңгейде 8 тапсырма бар.</p>
+        <button class="primary-button" id="start-button">Ойынды бастау <span aria-hidden="true">→</span></button>
+        <p class="gentle-note">Таймер жоқ. Қажет болса, үзіліс жаса. Қате жауап болса, басқа жауапты таңда.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="sun">☀️</div><div class="rainbow">🌈</div><div class="island">🏝️</div><div class="cloud cloud-one">☁️</div><div class="cloud cloud-two">☁️</div><div class="bird">🕊️</div></div>
+      <div class="level-section" id="levels">
+        <div class="section-heading"><div><p class="eyebrow">Ойын реті: 1 → 2 → 3 → 4</p><h2>Деңгейді таңда</h2></div><span id="home-progress" class="progress-pill">0 / 32 тапсырма</span></div>
+        <div class="level-grid" id="level-grid"></div>
+      </div>
+    </section>
+    <section id="game" class="screen game-screen" hidden>
+      <div class="game-topline"><button id="back-button" class="back-button"><span aria-hidden="true">←</span> Басты бет</button><span class="level-label" id="level-label"></span></div>
+      <div class="game-card">
+        <div class="question-head"><div><p class="eyebrow" id="step-label">1-тапсырма</p><h2 id="question-title"></h2></div><div class="step-count" id="step-count"></div></div>
+        <div class="progress-track" role="progressbar" aria-label="Деңгейдегі орындалу барысы"><div id="progress-fill"></div></div>
+        <div id="visual" class="visual" aria-hidden="true"></div>
+        <p id="prompt" class="prompt"></p>
+        <div id="answers" class="answer-grid" role="group" aria-label="Жауап нұсқалары"></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        <div class="game-actions"><button class="primary-button next-button" id="next-button" hidden>Келесі тапсырма <span aria-hidden="true">→</span></button></div>
+      </div>
+      <p class="encouragement">Тапсырмаларды өз қарқыныңмен орында.</p>
+    </section>
+    <section id="complete" class="screen complete-screen" hidden>
+      <div class="complete-card"><p class="eyebrow">Деңгей нәтижесі</p><h1 id="complete-title">Аялдама аяқталды!</h1><p id="complete-copy">Сен көп нәрсе үйрендің.</p><div class="complete-stars" id="complete-stars">⭐</div><button class="primary-button" id="continue-button">Деңгейлерге оралу <span aria-hidden="true">→</span></button></div>
+    </section>
+  </main>
+  <footer><span>Қазақ тілі · 3–4 сынып</span><button id="reset-button" class="text-button">Ойын барысын жаңарту</button></footer>
+  <dialog id="reset-dialog" class="reset-dialog"><form method="dialog"><p class="dialog-icon">🌼</p><h2>Бәрін жаңадан бастаймыз ба?</h2><p>Жиналған жұлдыздар мен орындалған тапсырмалар өшеді.</p><div class="dialog-actions"><button class="secondary-button" value="cancel">Жалғастыру</button><button class="danger-button" id="confirm-reset" value="reset">Иә, жаңарту</button></div></form></dialog>
+</body>
+</html>
